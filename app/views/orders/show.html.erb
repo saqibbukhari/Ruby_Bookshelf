@@ -1,0 +1,46 @@
+<p>
+  <b>Name:</b>
+  <%= @order.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @order.address %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @order.email %>
+</p>
+
+<p>
+  <b>Pay type:</b>
+  <%= @order.pay_type %>
+</p>
+
+<p>
+  <b>Order Total:</b>
+  <%= number_to_currency @total %>
+</p>
+
+<p>
+  <h1>Line Items</h1>
+  <table border="2">
+    <tr>
+      <th> Product Title</th>
+      <th> Quantity</th>
+      <th> Price / Product</th>
+      <th> Total</th>
+    </tr>
+    <% @line_item.each do |item| %>
+      <tr>
+        <td><%= item.product.title %></td>
+    	<td align="right"><%= item.quantity %></td>
+	<td><%=number_to_currency item.product.price %></td>
+	<td><%= number_to_currency item.total_price%></td>
+      </tr>
+    <% end %>
+  </table>
+</p>
+
+<%= link_to 'Back', orders_path %>

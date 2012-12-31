@@ -1,0 +1,29 @@
+<h1>Order's List</h1>
+
+<table border="2">
+  <tr>
+    <th>Serial No</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Pay type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<%i=0%>
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= i+=1%></td>
+    <td><%= order.name %></td>
+    <td><%= order.address %></td>
+    <td><%= order.email %></td>
+    <td><%= order.pay_type %></td>
+    <td><%= link_to 'Show', order %></td>
+    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+    <td><%= button_to 'Destroy', order, :method => :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<p><%= will_paginate @orders %></p>
+
