@@ -31,15 +31,15 @@
 	display: block;
 }
 
-.store_form select, .store_form textarea, .store_form input {
+.store_form select, .store_form textarea, .store_form input,.user_form select, .user_form textarea, .user_form input {
 	margin-left: 0.5em;
 }
 
-.store_form .submit {
+.store_form .submit,.user_form .submit {
 	margin-left: 4em;
 }
 
-.store_form div {
+.store_form div, .user_form div {
 	margin: 0.5em 0;
 }
 

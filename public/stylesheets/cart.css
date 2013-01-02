@@ -1,4 +1,8 @@
 /* Global styles */
+.number {
+        text-align: right;
+}
+
 #store .entry form, #store .entry form div {
 	display: inline;
 }
